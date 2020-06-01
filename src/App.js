@@ -1,4 +1,5 @@
 import React from 'react';
+// Don't need Router for now, but adding it in case I need pages in the future
 import { Router } from '@reach/router'
 import { useDispatch } from 'react-redux'
 import { getBreeds } from './redux/breeds/breeds.actions';

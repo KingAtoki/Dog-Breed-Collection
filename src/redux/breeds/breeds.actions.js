@@ -2,6 +2,8 @@ export const GET_BREEDS = 'GET_BREEDS'
 export const GET_BREEDS_SUCCESS = 'GET_BREEDS_SUCCESS'
 export const GET_BREEDS_FAIL = 'GET_BREEDS_FAIL'
 
+export const ADD_BREED = 'ADD_BREED'
+
 export const getBreeds = () => async dispatch => {
   try {
     dispatch({ type: GET_BREEDS })
@@ -14,3 +16,13 @@ export const getBreeds = () => async dispatch => {
     throw new Error(err)
   }
 }
+
+export const addBreedNameToFaves = name => ({
+  type: 'ADD_BREED',
+  payload: {
+    breed: {
+      name,
+      favoritePics: [],
+    }
+  }
+})
