@@ -3,6 +3,7 @@ export const GET_BREEDS_SUCCESS = 'GET_BREEDS_SUCCESS'
 export const GET_BREEDS_FAIL = 'GET_BREEDS_FAIL'
 
 export const ADD_BREED = 'ADD_BREED'
+export const REMOVE_BREED = 'REMOVE_BREED'
 
 export const GET_BREED_PIC = 'GET_BREED_PIC'
 export const GET_BREED_PIC_SUCCESS = 'GET_BREED_PIC_SUCCESS'
@@ -28,6 +29,13 @@ export const addBreedNameToFaves = name => ({
       name,
       favoritePics: [],
     }
+  }
+})
+
+export const removeBreedNameToFaves = name => ({
+  type: 'REMOVE_BREED',
+  payload: {
+    name,
   }
 })
 

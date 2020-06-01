@@ -6,6 +6,7 @@ import {
   GET_BREED_PIC,
   GET_BREED_PIC_FAIL,
   GET_BREED_PIC_SUCCESS,
+  REMOVE_BREED,
 } from './breeds.actions';
 
 const INITIAL_STATE = {
@@ -42,6 +43,13 @@ export default (state = INITIAL_STATE, action = {}) => {
       return {
         ...state,
         favoriteBreeds: sortedFavoriteBreeds
+      }
+    case REMOVE_BREED:
+      const filteredBreeds = state.favoriteBreeds
+        .filter(breed => breed.name !== action.payload.name)
+      return {
+        ...state,
+        favoriteBreeds: filteredBreeds
       }
 
     case GET_BREED_PIC:
