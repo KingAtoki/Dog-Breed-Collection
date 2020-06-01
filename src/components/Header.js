@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
+  homeButton: {
     marginRight: theme.spacing(2),
     color: 'white',
   },
@@ -27,7 +27,7 @@ const Header = () => {
           <Typography variant="h6" className={classes.title}>
             Dog Breed Collection
           </Typography>
-          <Link to='/' className={classes.menuButton}> 
+          <Link to='/' className={classes.homeButton}> 
             <IconButton edge="end" color="inherit" aria-label="home">
               <PetsIcon />
             </IconButton>
