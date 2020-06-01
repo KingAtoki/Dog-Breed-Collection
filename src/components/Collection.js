@@ -9,9 +9,10 @@ import {
   GridList,
   GridListTile,
   Button,
+  ButtonGroup,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { addRandomBreedPic } from '../redux/breeds/breeds.actions'
+import { addRandomBreedPic, removeBreedNameToFaves } from '../redux/breeds/breeds.actions'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,9 @@ const Collection = () => {
   const addRandomPic = (e, breed) => {
     dispatch(addRandomBreedPic(breed))
   }
+  const removeBreed = (e, breed) => {
+    dispatch(removeBreedNameToFaves(breed))
+  }
 
   const renderCollection = () => (
     favoriteBreeds.map(breed => {
@@ -63,14 +67,24 @@ const Collection = () => {
                   </GridList>
                 )
               }
-              <Button
-                variant="contained"
-                color="primary"
-                size="small"
-                onClick={e => addRandomPic(e, breed.name)}
-              >
-                Save a random picture of {vowels.includes(breed.name[0]) ? 'an' : 'a'} {breed.name}!
-              </Button>
+              <ButtonGroup color="primary" aria-label="outlined primary button group">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="small"
+                  onClick={e => addRandomPic(e, breed.name)}
+                >
+                  Save a random picture of {vowels.includes(breed.name[0]) ? 'an' : 'a'} {breed.name}!
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="small"
+                  onClick={e => removeBreed(e, breed.name)}
+                >
+                  Delete Breed
+                </Button>
+              </ ButtonGroup>
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
