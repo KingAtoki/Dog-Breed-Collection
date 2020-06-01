@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchBar from '../components/SearchBar'
+import Collection from '../components/Collection'
 
 const useStyles = makeStyles({
   root: {
@@ -20,6 +21,7 @@ const HomePage = () => {
         Choose your favorite dog breed!
       </Typography>
       <SearchBar />
+      <Collection />
     </div>
   )
 }
